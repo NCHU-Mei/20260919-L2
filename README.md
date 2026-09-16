@@ -110,3 +110,5 @@
 | **資料儲存** | Browser `localStorage` API | 離線持久化儲存使用者名稱、座右銘與主題偏好 |
 | **AI 擴充** | Antigravity Customization (`.agents/skills/`) | 導入標準規格化自訂 Agent 技能 |
 | **版本管理** | Git, GitHub | 遵循標準版本控制規範與模組化 Commit |
+
+![Screenshot](assets/screenshot.png)
