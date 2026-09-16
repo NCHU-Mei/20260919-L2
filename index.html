@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal Web Dashboard - Elegant real-time clock, personalized greeting, and live calendar.">
+  <title>Personal Horizon • Time & Space</title>
+  
+  <!-- Modern Typography from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="aurora">
+  <!-- Dynamic Ambient Background Glowing Meshes -->
+  <div class="ambient-glow" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grain-overlay"></div>
+  </div>
+
+  <div class="app-container">
+    <!-- Top Navigation Bar -->
+    <header class="top-nav" id="top-nav">
+      <div class="system-status">
+        <span class="status-pulse" id="system-status-indicator"></span>
+        <span class="status-label">LIVE HORIZON</span>
+        <span class="status-divider">•</span>
+        <span class="timezone-tag" id="timezone-badge">UTC+08:00</span>
+      </div>
+
+      <div class="top-controls">
+        <!-- 12h / 24h Toggle -->
+        <button id="format-toggle-btn" class="control-btn" title="Toggle 12h / 24h format (Key: T)" aria-label="Toggle clock format">
+          <span class="btn-label" id="format-label">24H</span>
+        </button>
+
+        <!-- Theme Picker Dropdown -->
+        <div class="theme-dropdown-container">
+          <button id="theme-menu-btn" class="control-btn" title="Switch Theme" aria-label="Switch Theme">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+            </svg>
+            <span class="theme-name" id="current-theme-label">Aurora</span>
+          </button>
+          <div class="theme-dropdown" id="theme-dropdown">
+            <button class="theme-opt active" data-theme-val="aurora" id="theme-opt-aurora">
+              <span class="theme-swatch swatch-aurora"></span> Cosmic Aurora
+            </button>
+            <button class="theme-opt" data-theme-val="cyberpunk" id="theme-opt-cyberpunk">
+              <span class="theme-swatch swatch-cyberpunk"></span> Cyberpunk Neon
+            </button>
+            <button class="theme-opt" data-theme-val="sunset" id="theme-opt-sunset">
+              <span class="theme-swatch swatch-sunset"></span> Solar Sunset
+            </button>
+            <button class="theme-opt" data-theme-val="minimal" id="theme-opt-minimal">
+              <span class="theme-swatch swatch-minimal"></span> Obsidian Silver
+            </button>
+          </div>
+        </div>
+
+        <!-- Zen Mode (Desk Clock) -->
+        <button id="zen-mode-btn" class="control-btn" title="Zen Desk Clock Mode (Key: Z)" aria-label="Toggle Zen mode">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Center Card -->
+    <main class="main-stage">
+      <section class="glass-card" id="main-card">
+        
+        <!-- Header Greeting & Name Section -->
+        <div class="greeting-row">
+          <div class="greeting-badge">
+            <span class="greeting-icon" id="greeting-icon">✨</span>
+            <span class="greeting-phrase" id="greeting-text">Good evening,</span>
+          </div>
+
+          <div class="name-container" id="name-container">
+            <span class="user-display-name" id="user-name" title="Click to change your name">User</span>
+            <button id="edit-name-btn" class="edit-icon-btn" title="Edit your name" aria-label="Edit your name">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 20h9"></path>
+                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Inline Name Edit Input (Hidden by default) -->
+          <div class="name-edit-box" id="name-edit-box" style="display: none;">
+            <input type="text" id="name-input" maxlength="28" placeholder="Enter your name..." aria-label="Your name input">
+            <button id="save-name-btn" class="btn-accent" title="Save name">Save</button>
+            <button id="cancel-name-btn" class="btn-ghost" title="Cancel">Cancel</button>
+          </div>
+        </div>
+
+        <!-- Central Time Display -->
+        <div class="clock-display" id="clock-display">
+          <div class="digits-wrapper">
+            <span class="digit-unit" id="hours">00</span>
+            <span class="colon-separator" id="colon-1">:</span>
+            <span class="digit-unit" id="minutes">00</span>
+            <span class="colon-separator" id="colon-2">:</span>
+            <span class="digit-unit digit-seconds" id="seconds">00</span>
+            <span class="period-badge" id="period-indicator">PM</span>
+          </div>
+
+          <!-- Progress Bar tracking the current minute (0-60s) -->
+          <div class="seconds-progress-bar" title="Current minute progress">
+            <div class="progress-fill" id="seconds-progress-fill"></div>
+          </div>
+        </div>
+
+        <!-- Date & Calendar Insights -->
+        <div class="date-row">
+          <div class="primary-date" id="calendar-date">
+            Wednesday, September 16, 2026
+          </div>
+          <div class="date-meta-badges">
+            <span class="meta-pill" id="day-of-year-pill">Day 259 of 365</span>
+            <span class="meta-pill" id="week-number-pill">Week 38</span>
+            <span class="meta-pill" id="year-progress-pill">71.0% of 2026</span>
+          </div>
+        </div>
+
+        <!-- Custom Quote / Motivation Row -->
+        <div class="motto-row">
+          <p class="personal-motto" id="personal-motto" title="Click to customize motto">
+            "The future belongs to those who build it with precision and presence."
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Keyboard Shortcut Hints -->
+    <footer class="bottom-footer" id="bottom-footer">
+      <div class="shortcut-hints">
+        <span class="hint-item"><kbd>T</kbd> 12h/24h</span>
+        <span class="hint-item"><kbd>Z</kbd> Zen Mode</span>
+        <span class="hint-item"><kbd>Click Name</kbd> Personalize</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
