@@ -6,7 +6,7 @@
 - **線上展示 (Live Demo)**：[https://nchu-mei.github.io/20260919-L2/](https://nchu-mei.github.io/20260919-L2/)
 - **GitHub 儲存庫**：[https://github.com/NCHU-Mei/20260919-L2.git](https://github.com/NCHU-Mei/20260919-L2.git)
 - **實作日期**：2026-09-16
-
+![Screenshot](assets/screenshot.png)
 ---
 
 ## 📖 專案簡介 (Project Overview)
@@ -111,4 +111,4 @@
 | **AI 擴充** | Antigravity Customization (`.agents/skills/`) | 導入標準規格化自訂 Agent 技能 |
 | **版本管理** | Git, GitHub | 遵循標準版本控制規範與模組化 Commit |
 
-![Screenshot](assets/screenshot.png)
+
