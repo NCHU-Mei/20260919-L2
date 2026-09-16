@@ -16,3 +16,7 @@ ehthumbs_vista.db
 
 # Logs
 *.log
+
+# Local helpers
+push.bat
+
