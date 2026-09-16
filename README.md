@@ -1,16 +1,16 @@
 # Personal Horizon • Live Time & Space
 
-A personalized web application featuring a real-time precision digital clock, dynamic day/night greetings, timezone detection, and customizable user profile with dark mode and ambient glassmorphic themes.
+A personalized web application featuring a real-time precision digital clock, personalized greetings, timezone detection, and customizable user profile with dark mode and ambient glassmorphic themes.
 
 ## Features
 
 - **Live Precision Clock**: Accurate to the second with minute completion progress bar.
-- **Dynamic Greeting**: Automatically adapts to morning, afternoon, evening, and night with matching celestial iconography.
+- **Dynamic Greeting**: Automatically adapts to morning, afternoon, evening, and night for a warm personal touch.
 - **Personal Profile**: Click-to-edit user display name and motivational motto with browser `localStorage` persistence.
 - **Theme Engine**: Switch between 4 curated aesthetic color schemes:
   - *Cosmic Aurora*
   - *Cyberpunk Neon*
-  - *Solar Sunset*
+  - *Amber Rose*
   - *Obsidian Silver*
 - **Desk Clock (Zen Mode)**: High-contrast minimalist full-viewport display (`Key: Z`).
 - **12H / 24H Toggle**: Instant format switching (`Key: T`).

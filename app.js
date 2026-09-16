@@ -112,20 +112,16 @@
 
   function updateGreeting(hours) {
     let phrase = 'Hello,';
-    let icon = '✨';
+    const icon = '👋';
 
     if (hours >= 5 && hours < 12) {
       phrase = 'Good morning,';
-      icon = '🌅';
     } else if (hours >= 12 && hours < 17) {
       phrase = 'Good afternoon,';
-      icon = '☀️';
     } else if (hours >= 17 && hours < 22) {
       phrase = 'Good evening,';
-      icon = '🌆';
     } else {
       phrase = 'Good night,';
-      icon = '🌙';
     }
 
     greetingText.textContent = phrase;
@@ -222,7 +218,7 @@
   const THEME_LABELS = {
     aurora: 'Aurora',
     cyberpunk: 'Cyberpunk',
-    sunset: 'Sunset',
+    sunset: 'Amber Rose',
     minimal: 'Minimal'
   };
 
