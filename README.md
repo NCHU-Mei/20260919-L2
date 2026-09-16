@@ -3,6 +3,7 @@
 - **課程名稱**：AIoT-DA (Artificial Intelligence of Things & Data Analytics)
 - **實作單元**：Class 1 (DIC - 1)
 - **學員 / 作者**：NCHU-Mei
+- **線上展示 (Live Demo)**：[https://nchu-mei.github.io/20260919-L2/](https://nchu-mei.github.io/20260919-L2/)
 - **GitHub 儲存庫**：[https://github.com/NCHU-Mei/20260919-L2.git](https://github.com/NCHU-Mei/20260919-L2.git)
 - **實作日期**：2026-09-16
 
@@ -69,9 +70,13 @@
 
 ---
 
-## 🚀 快速開始 (Getting Started)
+## 🚀 快速開始與線上展示 (Getting Started & Live Demo)
 
-### 1. 本機啟動
+### 🌐 線上直接體驗 (Live Demo Page)
+可以直接存取 GitHub Pages 線上展示版本：  
+👉 **[https://nchu-mei.github.io/20260919-L2/](https://nchu-mei.github.io/20260919-L2/)**
+
+### 💻 本機啟動 (Local Setup)
 本專案為純原生前端技術（Vanilla HTML/CSS/JS），無需繁瑣安裝：
 - **直接開啟**：以任何現代瀏覽器直接點擊開啟 `index.html`。
 - **本地伺服器**：

@@ -3,6 +3,7 @@
 - **課程名稱**：AIoT-DA (Artificial Intelligence of Things & Data Analytics)
 - **實作單元**：Class 1 (DIC - 1)
 - **學生/作者**：NCHU-Mei
+- **線上展示 (Live Demo)**：[https://nchu-mei.github.io/20260919-L2/](https://nchu-mei.github.io/20260919-L2/)
 - **GitHub 儲存庫**：[https://github.com/NCHU-Mei/20260919-L2.git](https://github.com/NCHU-Mei/20260919-L2.git)
 - **實作日期**：2026-09-16
 
